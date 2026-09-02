@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin:0; background:#F5F7FA; -webkit-font-smoothing:antialiased; }
+  a { color:#102A43; text-decoration:none; }
+  a:hover { color:#00A86B; }
+  ::selection { background:#00A86B; color:#fff; }
+</style>
+</helmet>
+<div style="font-family:Archivo,system-ui,sans-serif;color:#102A43;background:#F5F7FA;min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #E4E9F0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 20px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="Revista Condominio.dc.html" style="display:flex;align-items:center"><img src="uploads/revista.png" alt="Revista Condomínio" style="height:34px;width:auto;display:block" /></a>
+      <nav style="display:{{ navDisplay }};align-items:center;gap:20px;font-size:14px;font-weight:500">
+        <a href="Revista Condominio.dc.html" style="color:#48607A" style-hover="color:#102A43">Início</a>
+        <a href="Noticias.dc.html" style="color:#48607A" style-hover="color:#102A43">Notícias</a>
+        <a href="Guia Comercial.dc.html" style="color:#48607A" style-hover="color:#102A43">Guia Comercial</a>
+        <a href="Revista Digital.dc.html" style="color:#48607A" style-hover="color:#102A43">Revista Digital</a>
+        <a href="Anuncie.dc.html" style="color:#102A43;border-bottom:2px solid #D4A72C;padding-bottom:4px">Anuncie</a>
+      </nav>
+      <a href="#contato" style="background:#D4A72C;color:#102A43;font-size:13.5px;font-weight:700;padding:10px 17px;border-radius:10px;white-space:nowrap" style-hover="background:#E5BA45;color:#102A43">Falar com o comercial</a>
+    </div>
+  </header>
+
+  <main style="max-width:1240px;margin:0 auto;padding:0 20px 60px">
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12.5px;color:#7A8CA0;padding:22px 0 10px">
+      <a href="Revista Condominio.dc.html" style="color:#7A8CA0" style-hover="color:#00A86B">Início</a><span>›</span><span style="color:#48607A">Anuncie</span>
+    </div>
+
+    <section style="background:#102A43;border-radius:22px;padding:clamp(28px,4vw,52px);margin-bottom:34px">
+      <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#D4A72C;margin-bottom:14px">Mídia kit 2026</span>
+      <h1 style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(29px,3.6vw,44px);line-height:1.1;color:#fff;margin:0 0 14px;letter-spacing:-.02em;max-width:20ch">Sua marca diante de quem decide a compra do condomínio</h1>
+      <p style="margin:0 0 28px;font-size:16px;line-height:1.65;color:#B9C8D8;max-width:58ch">Síndicos, administradoras, conselheiros e gerentes prediais leem a Revista Condomínio para decidir contratos de manutenção, segurança, obras e serviços.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px">
+        <div style="border:1px solid #2A4560;border-radius:14px;padding:18px">
+          <strong style="display:block;font-family:'Source Serif 4',Georgia,serif;font-size:30px;color:#fff;line-height:1">78 mil</strong>
+          <span style="font-size:13px;color:#9FB3C8">leitores únicos/mês no portal</span>
+        </div>
+        <div style="border:1px solid #2A4560;border-radius:14px;padding:18px">
+          <strong style="display:block;font-family:'Source Serif 4',Georgia,serif;font-size:30px;color:#fff;line-height:1">21 mil</strong>
+          <span style="font-size:13px;color:#9FB3C8">assinantes da newsletter</span>
+        </div>
+        <div style="border:1px solid #2A4560;border-radius:14px;padding:18px">
+          <strong style="display:block;font-family:'Source Serif 4',Georgia,serif;font-size:30px;color:#fff;line-height:1">8 mil</strong>
+          <span style="font-size:13px;color:#9FB3C8">exemplares impressos/mês</span>
+        </div>
+        <div style="border:1px solid #2A4560;border-radius:14px;padding:18px">
+          <strong style="display:block;font-family:'Source Serif 4',Georgia,serif;font-size:30px;color:#fff;line-height:1">42%</strong>
+          <span style="font-size:13px;color:#9FB3C8">são síndicos profissionais</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="formatos" style="margin-bottom:40px">
+      <div style="border-top:2px solid #102A43;padding-top:14px;margin-bottom:20px">
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;font-weight:700;margin:0 0 6px;letter-spacing:-.015em">Formatos de banner</h2>
+        <p style="margin:0;font-size:14.5px;color:#48607A">Peças em JPG, PNG ou HTML5 — entrega até 3 dias úteis antes da veiculação.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:22px">
+          <div style="height:60px;border:1px dashed #C7D3E0;border-radius:8px;background:#EDF2F7;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><span style="font:500 10px/1 ui-monospace,Menlo,monospace;color:#5B6B7F">970 × 90</span></div>
+          <h3 style="font-size:17px;margin:0 0 6px;font-weight:600">Leaderboard</h3>
+          <p style="margin:0 0 10px;font-size:13.5px;line-height:1.55;color:#48607A">Topo da home e das editorias, acima da manchete principal.</p>
+          <strong style="font-size:15px;color:#0B8F5E">R$ 2.400/mês</strong>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:22px">
+          <div style="height:60px;border:1px dashed #C7D3E0;border-radius:8px;background:#EDF2F7;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><span style="font:500 10px/1 ui-monospace,Menlo,monospace;color:#5B6B7F">300 × 250</span></div>
+          <h3 style="font-size:17px;margin:0 0 6px;font-weight:600">Retângulo lateral</h3>
+          <p style="margin:0 0 10px;font-size:13.5px;line-height:1.55;color:#48607A">Coluna direita da home, listagem de notícias e página de matéria.</p>
+          <strong style="font-size:15px;color:#0B8F5E">R$ 1.600/mês</strong>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:22px">
+          <div style="height:60px;border:1px dashed #C7D3E0;border-radius:8px;background:#EDF2F7;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><span style="font:500 10px/1 ui-monospace,Menlo,monospace;color:#5B6B7F">970 × 120</span></div>
+          <h3 style="font-size:17px;margin:0 0 6px;font-weight:600">Billboard editorial</h3>
+          <p style="margin:0 0 10px;font-size:13.5px;line-height:1.55;color:#48607A">Entre as editorias, no meio da leitura — alto índice de visualização.</p>
+          <strong style="font-size:15px;color:#0B8F5E">R$ 2.900/mês</strong>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:22px">
+          <div style="height:60px;border:1px dashed #C7D3E0;border-radius:8px;background:#EDF2F7;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><span style="font:500 10px/1 ui-monospace,Menlo,monospace;color:#5B6B7F">Newsletter</span></div>
+          <h3 style="font-size:17px;margin:0 0 6px;font-weight:600">Patrocínio da newsletter</h3>
+          <p style="margin:0 0 10px;font-size:13.5px;line-height:1.55;color:#48607A">Selo do patrocinador + banner em 4 edições semanais.</p>
+          <strong style="font-size:15px;color:#0B8F5E">R$ 3.200/mês</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="planos" style="margin-bottom:40px">
+      <div style="border-top:2px solid #00A86B;padding-top:14px;margin-bottom:20px">
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;font-weight:700;margin:0 0 6px;letter-spacing:-.015em">Planos do Guia Comercial</h2>
+        <p style="margin:0;font-size:14.5px;color:#48607A">Presença permanente na busca por serviço e cidade, com recebimento de pedidos de orçamento.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px">
+          <span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A8CA0">Essencial</span>
+          <strong style="font-family:'Source Serif 4',Georgia,serif;font-size:32px;line-height:1">R$ 149<span style="font-size:14px;font-weight:400;color:#7A8CA0">/mês</span></strong>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:14px;color:#48607A;flex:1">
+            <span>· Ficha da empresa no guia</span>
+            <span>· 1 categoria e 1 cidade</span>
+            <span>· Contato por formulário</span>
+          </div>
+          <a href="#contato" style="background:#F5F7FA;color:#102A43;font-weight:600;font-size:14px;padding:12px 18px;border-radius:10px;text-align:center" style-hover="background:#E9F6F0;color:#0B8F5E">Contratar</a>
+        </div>
+        <div style="background:#102A43;border:1px solid #102A43;border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px;box-shadow:0 18px 40px rgba(16,42,67,.22)">
+          <span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#D4A72C">Destaque · mais contratado</span>
+          <strong style="font-family:'Source Serif 4',Georgia,serif;font-size:32px;line-height:1;color:#fff">R$ 349<span style="font-size:14px;font-weight:400;color:#9FB3C8">/mês</span></strong>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:14px;color:#C7D6E4;flex:1">
+            <span>· Posição de destaque na categoria</span>
+            <span>· 3 categorias e cobertura estadual</span>
+            <span>· WhatsApp direto e página exclusiva</span>
+            <span>· 1 banner 300×250 por trimestre</span>
+          </div>
+          <a href="#contato" style="background:#D4A72C;color:#102A43;font-weight:700;font-size:14px;padding:12px 18px;border-radius:10px;text-align:center" style-hover="background:#E5BA45;color:#102A43">Contratar</a>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px">
+          <span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A8CA0">Parceiro</span>
+          <strong style="font-family:'Source Serif 4',Georgia,serif;font-size:32px;line-height:1">R$ 890<span style="font-size:14px;font-weight:400;color:#7A8CA0">/mês</span></strong>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:14px;color:#48607A;flex:1">
+            <span>· Tudo do plano Destaque</span>
+            <span>· 1 conteúdo patrocinado por mês</span>
+            <span>· Anúncio de 1 página na revista impressa</span>
+            <span>· Relatório mensal de desempenho</span>
+          </div>
+          <a href="#contato" style="background:#F5F7FA;color:#102A43;font-weight:600;font-size:14px;padding:12px 18px;border-radius:10px;text-align:center" style-hover="background:#E9F6F0;color:#0B8F5E">Contratar</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" style="background:#fff;border:1px solid #E4E9F0;border-radius:22px;padding:clamp(26px,3.5vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:34px;align-items:start">
+      <div>
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(24px,2.8vw,32px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em">Fale com o comercial</h2>
+        <p style="margin:0 0 20px;font-size:15.5px;line-height:1.65;color:#48607A;max-width:46ch">Conte o que sua empresa vende e para quais cidades — montamos um plano com portal, newsletter e impresso.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14.5px;color:#48607A">
+          <span>anuncie@revistacondominio.com.br</span>
+          <span>+55 81 3126-2300</span>
+          <span>Atendimento de segunda a sexta, 9h às 18h</span>
+        </div>
+      </div>
+      <form onSubmit="{{ onEnviar }}" style="display:flex;flex-direction:column;gap:12px">
+        <input required="required" placeholder="Empresa" value="{{ empresa }}" onChange="{{ onEmpresa }}" style="border:1px solid #E4E9F0;background:#FAFCFE;border-radius:11px;padding:14px 16px;font-family:Archivo,sans-serif;font-size:14.5px;color:#102A43;outline:none" />
+        <input required="required" type="email" placeholder="E-mail corporativo" value="{{ mail }}" onChange="{{ onMail }}" style="border:1px solid #E4E9F0;background:#FAFCFE;border-radius:11px;padding:14px 16px;font-family:Archivo,sans-serif;font-size:14.5px;color:#102A43;outline:none" />
+        <select value="{{ interesse }}" onChange="{{ onInteresse }}" style="border:1px solid #E4E9F0;background:#FAFCFE;border-radius:11px;padding:14px 16px;font-family:Archivo,sans-serif;font-size:14.5px;color:#102A43;outline:none">
+          <option>Banners no portal</option>
+          <option>Plano do Guia Comercial</option>
+          <option>Patrocínio da newsletter</option>
+          <option>Anúncio na revista impressa</option>
+          <option>Conteúdo patrocinado</option>
+        </select>
+        <textarea placeholder="Conte um pouco sobre a empresa e a região de atendimento" value="{{ msg }}" onChange="{{ onMsg }}" style="border:1px solid #E4E9F0;background:#FAFCFE;border-radius:11px;padding:14px 16px;min-height:110px;resize:vertical;font-family:Archivo,sans-serif;font-size:14.5px;line-height:1.5;color:#102A43;outline:none"></textarea>
+        <button type="submit" style="background:#102A43;color:#fff;border:none;border-radius:11px;padding:15px 22px;font-family:Archivo,sans-serif;font-weight:700;font-size:15px;cursor:pointer" style-hover="background:#0A1E32">Enviar contato</button>
+        <span style="font-size:12.5px;color:#7A8CA0">{{ formMsg }}</span>
+      </form>
+    </section>
+  </main>
+
+  <footer style="background:#102A43;color:#B9C8D8;padding:44px 20px 26px">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+      <div style="background:#fff;padding:10px 12px;border-radius:9px"><img src="uploads/revista.png" alt="Revista Condomínio" style="height:26px;width:auto;display:block" /></div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:13px">
+        <a href="Revista Condominio.dc.html" style="color:#B9C8D8" style-hover="color:#fff">Início</a>
+        <a href="Noticias.dc.html" style="color:#B9C8D8" style-hover="color:#fff">Notícias</a>
+        <a href="Guia Comercial.dc.html" style="color:#B9C8D8" style-hover="color:#fff">Guia Comercial</a>
+        <a href="Revista Digital.dc.html" style="color:#B9C8D8" style-hover="color:#fff">Revista Digital</a>
+        <a href="Institucional.dc.html" style="color:#B9C8D8" style-hover="color:#fff">Institucional</a>
+      </div>
+      <span style="font-size:12.5px;color:#7F97AF">© 2026 Revista Condomínio</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, empresa: '', mail: '', interesse: 'Banners no portal', msg: '', enviado: false };
+  componentDidMount() { this._r = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this._r); }
+  componentWillUnmount() { window.removeEventListener('resize', this._r); }
+  renderVals() {
+    return {
+      navDisplay: this.state.w < 860 ? 'none' : 'flex',
+      empresa: this.state.empresa, onEmpresa: e => this.setState({ empresa: e.target.value }),
+      mail: this.state.mail, onMail: e => this.setState({ mail: e.target.value }),
+      interesse: this.state.interesse, onInteresse: e => this.setState({ interesse: e.target.value }),
+      msg: this.state.msg, onMsg: e => this.setState({ msg: e.target.value }),
+      onEnviar: e => { e.preventDefault(); this.setState({ enviado: true }); },
+      formMsg: this.state.enviado ? 'Recebido! O time comercial responde em até 1 dia útil com o mídia kit completo.' : 'Retornamos em até 1 dia útil com o mídia kit em PDF.'
+    };
+  }
+}
+</script>
+</body>
+</html>

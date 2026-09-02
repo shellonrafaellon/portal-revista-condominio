@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin:0; background:#F5F7FA; -webkit-font-smoothing:antialiased; }
+  a { color:#102A43; text-decoration:none; }
+  a:hover { color:#00A86B; }
+  ::selection { background:#00A86B; color:#fff; }
+</style>
+</helmet>
+<div style="font-family:Archivo,system-ui,sans-serif;color:#102A43;background:#F5F7FA;min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #E4E9F0">
+    <div style="max-width:1180px;margin:0 auto;padding:0 20px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="Revista Condominio.dc.html" style="display:flex;align-items:center"><img src="uploads/revista.png" alt="Revista Condomínio" style="height:32px;width:auto;display:block" /></a>
+      <nav style="display:{{ navDisplay }};align-items:center;gap:22px;font-size:14px;font-weight:500">
+        <a href="Revista Condominio.dc.html" style="color:#48607A" style-hover="color:#102A43">Início</a>
+        <a href="Revista Condominio.dc.html#gestao" style="color:#48607A" style-hover="color:#102A43">Gestão</a>
+        <a href="Revista Condominio.dc.html#seguranca" style="color:#48607A" style-hover="color:#102A43">Segurança</a>
+        <a href="Revista Condominio.dc.html#tecnologia" style="color:#102A43;border-bottom:2px solid #00A86B;padding-bottom:4px">Tecnologia</a>
+        <a href="Revista Condominio.dc.html#juridico" style="color:#48607A" style-hover="color:#102A43">Jurídico</a>
+        <a href="Revista Condominio.dc.html#financas" style="color:#48607A" style-hover="color:#102A43">Finanças</a>
+      </nav>
+      <a href="Revista Condominio.dc.html#newsletter" style="background:#00A86B;color:#fff;font-size:13.5px;font-weight:600;padding:10px 17px;border-radius:10px;white-space:nowrap" style-hover="background:#0B8F5E;color:#fff">Assine a revista</a>
+    </div>
+    <div style="height:3px;background:#EEF2F7"><div style="height:3px;background:#00A86B;width:{{ progress }};transition:width .1s linear"></div></div>
+  </header>
+
+  <article style="max-width:1180px;margin:0 auto;padding:0 20px">
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12.5px;color:#7A8CA0;padding:22px 0 6px">
+      <a href="Revista Condominio.dc.html" style="color:#7A8CA0" style-hover="color:#00A86B">Início</a><span>›</span>
+      <a href="Revista Condominio.dc.html#tecnologia" style="color:#7A8CA0" style-hover="color:#00A86B">Tecnologia</a><span>›</span>
+      <span style="color:#48607A">Condomínios inteligentes</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:{{ mainCols }};gap:44px;align-items:start;padding:14px 0 60px">
+
+      <div style="min-width:0">
+        <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0A6EBD;margin-bottom:14px">Tecnologia</span>
+        <h1 style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance">Condomínios inteligentes: tecnologia redefine a rotina de síndicos e moradores</h1>
+        <p style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(18px,2vw,21px);line-height:1.5;color:#48607A;margin:0 0 26px;max-width:64ch">Do reconhecimento facial na portaria à leitura remota de água, a automação já reduz custos operacionais em até 22% — e muda a forma como assembleias, obras e serviços são acompanhados no dia a dia.</p>
+
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:18px 0;border-top:1px solid #E4E9F0;border-bottom:1px solid #E4E9F0;margin-bottom:28px">
+          <div style="display:flex;align-items:center;gap:13px">
+            <div style="width:44px;height:44px;border-radius:50%;background:#102A43;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px">MA</div>
+            <div>
+              <div style="font-size:14.5px;font-weight:600">Marina Alcântara</div>
+              <div style="font-size:12.5px;color:#7A8CA0">Publicado em 28 de agosto de 2026, 07h30 · Atualizado há 2 horas · 6 min de leitura</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-size:12px;color:#7A8CA0;margin-right:2px">Compartilhar</span>
+            <a href="Materia.dc.html" style="border:1px solid #E4E9F0;border-radius:9px;padding:8px 13px;font-size:12.5px;font-weight:500;color:#48607A;background:#fff" style-hover="border-color:#00A86B;color:#00A86B">WhatsApp</a>
+            <a href="Materia.dc.html" style="border:1px solid #E4E9F0;border-radius:9px;padding:8px 13px;font-size:12.5px;font-weight:500;color:#48607A;background:#fff" style-hover="border-color:#00A86B;color:#00A86B">LinkedIn</a>
+            <a href="Materia.dc.html" style="border:1px solid #E4E9F0;border-radius:9px;padding:8px 13px;font-size:12.5px;font-weight:500;color:#48607A;background:#fff" style-hover="border-color:#00A86B;color:#00A86B">Copiar link</a>
+          </div>
+        </div>
+
+        <figure style="margin:0 0 30px">
+          <div style="aspect-ratio:16/9;border-radius:16px;background-image:url('https://images.pexels.com/photos/13168513/pexels-photo-13168513.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:14px">
+            </div>
+          <figcaption style="font-size:12.5px;color:#7A8CA0;padding-top:10px;line-height:1.5">Controle de acesso por biometria facial em condomínio na zona sul de São Paulo. — Foto: Divulgação</figcaption>
+        </figure>
+
+        <div style="max-width:68ch;font-size:{{ bodySize }};line-height:1.75;color:#20374E">
+          <p style="margin:0 0 22px">A rotina de um síndico mudou mais nos últimos cinco anos do que nas duas décadas anteriores. O que antes era resolvido em livros de ocorrência, avisos no elevador e reuniões presenciais migrou para painéis de controle, aplicativos e sistemas que registram cada entrada, cada consumo e cada chamado aberto.</p>
+          <p style="margin:0 0 22px">Levantamento conduzido em 4.200 condomínios das cinco regiões do país mostra que prédios com pelo menos três sistemas automatizados integrados — controle de acesso, medição individualizada e gestão de chamados — reduziram em média 22% os custos operacionais no primeiro ano, sem corte de pessoal na maior parte dos casos.</p>
+
+          <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(23px,2.6vw,28px);line-height:1.25;letter-spacing:-.015em;margin:38px 0 16px;font-weight:700">O fim do improviso na portaria</h2>
+          <p style="margin:0 0 22px">A portaria continua sendo o ponto mais sensível — e o mais transformado. Sistemas de reconhecimento facial e QR code temporário para visitantes eliminaram grande parte do atrito na entrada, mas trouxeram uma exigência nova: política de dados escrita, aprovada em assembleia e disponível a qualquer morador que a solicite.</p>
+
+          <blockquote style="margin:30px 0;padding:24px 28px;background:#fff;border-left:3px solid #00A86B;border-radius:0 14px 14px 0">
+            <p style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;line-height:1.5;margin:0 0 12px;color:#102A43">A tecnologia não substitui a governança. Ela expõe, em tempo real, se ela existe ou não.</p>
+            <cite style="font-size:13px;color:#7A8CA0;font-style:normal">Rodrigo Peixoto, consultor em gestão predial</cite>
+          </blockquote>
+
+          <p style="margin:0 0 22px">Para condomínios que operam portaria remota, a recomendação dos especialistas é manter redundância: link de internet secundário, nobreak dimensionado para no mínimo quatro horas e um protocolo impresso de contingência afixado na guarita.</p>
+
+          <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(23px,2.6vw,28px);line-height:1.25;letter-spacing:-.015em;margin:38px 0 16px;font-weight:700">Onde a economia realmente aparece</h2>
+          <p style="margin:0 0 22px">A medição individualizada de água segue como o investimento de retorno mais previsível, com queda média de consumo entre 25% e 30% já nos primeiros seis meses. Em seguida vêm a automação de iluminação em áreas comuns e a substituição de bombas por modelos com inversor de frequência.</p>
+
+          <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:24px 26px;margin:30px 0">
+            <h3 style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#D4A72C;margin:0 0 16px">Por onde começar</h3>
+            <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:11px;font-size:15.5px;line-height:1.6;color:#20374E">
+              <li>Mapeie os três maiores custos do último balancete antes de contratar qualquer sistema.</li>
+              <li>Exija contrato com portabilidade de dados e prazo de saída definido.</li>
+              <li>Leve a decisão à assembleia com dois orçamentos comparáveis e payback estimado.</li>
+              <li>Defina quem, na administração, será o responsável pelos dados pessoais coletados.</li>
+            </ul>
+          </div>
+
+          <p style="margin:0 0 22px">O consenso entre administradoras é que a maturidade digital de um condomínio se mede menos pelo número de sistemas contratados e mais pela consistência dos processos por trás deles. Prédios que digitalizaram a prestação de contas antes da portaria, por exemplo, relatam menos conflitos em assembleia — mesmo com investimento total menor.</p>
+          <p style="margin:0 0 22px">Para 2027, a expectativa do setor é de consolidação: menos fornecedores, mais integração entre plataformas e uma exigência crescente de que o morador consiga, em um único aplicativo, reservar, pagar, abrir chamado e votar.</p>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 0">
+          <a href="Noticias.dc.html" style="font-size:12.5px;color:#48607A;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:8px 15px" style-hover="border-color:#00A86B;color:#00A86B">Automação predial</a>
+          <a href="Noticias.dc.html" style="font-size:12.5px;color:#48607A;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:8px 15px" style-hover="border-color:#00A86B;color:#00A86B">Controle de acesso</a>
+          <a href="Noticias.dc.html" style="font-size:12.5px;color:#48607A;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:8px 15px" style-hover="border-color:#00A86B;color:#00A86B">LGPD</a>
+          <a href="Noticias.dc.html" style="font-size:12.5px;color:#48607A;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:8px 15px" style-hover="border-color:#00A86B;color:#00A86B">Redução de custos</a>
+        </div>
+
+        <section style="margin-top:52px">
+          <div style="border-top:2px solid #102A43;padding-top:14px;margin-bottom:20px">
+            <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:700;margin:0;letter-spacing:-.015em">Matérias relacionadas</h2>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px">
+            <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:14px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+              <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/22748912/pexels-photo-22748912.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center"></div>
+              <div style="padding:16px 18px 20px">
+                <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0A6EBD;margin-bottom:8px">Tecnologia</span>
+                <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.25;margin:0 0 8px;font-weight:700">Medição individualizada de água: economia real chega a 30%</h3>
+                <span style="font-size:12px;color:#7A8CA0">26 ago 2026</span>
+              </div>
+            </a>
+            <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:14px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+              <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/1181304/pexels-photo-1181304.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center"></div>
+              <div style="padding:16px 18px 20px">
+                <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9A3324;margin-bottom:8px">Segurança</span>
+                <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.25;margin:0 0 8px;font-weight:700">Biometria e LGPD: o que o condomínio pode armazenar</h3>
+                <span style="font-size:12px;color:#7A8CA0">28 ago 2026</span>
+              </div>
+            </a>
+            <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:14px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+              <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/7869122/pexels-photo-7869122.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center"></div>
+              <div style="padding:16px 18px 20px">
+                <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#00A86B;margin-bottom:8px">Finanças</span>
+                <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.25;margin:0 0 8px;font-weight:700">Taxa condominial sobe 7,1% em 12 meses</h3>
+                <span style="font-size:12px;color:#7A8CA0">28 ago 2026</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section style="margin-top:52px">
+          <div style="border-top:2px solid #102A43;padding-top:14px;margin-bottom:22px;display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+            <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:700;margin:0;letter-spacing:-.015em">Comentários</h2>
+            <span style="font-size:13px;color:#7A8CA0">{{ commentCount }} comentários</span>
+          </div>
+
+          <form onSubmit="{{ onComment }}" style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:20px;margin-bottom:24px;display:flex;flex-direction:column;gap:12px">
+            <textarea placeholder="Escreva seu comentário como síndico, morador ou profissional do setor…" value="{{ draft }}" onChange="{{ onDraft }}" style="width:100%;box-sizing:border-box;min-height:92px;resize:vertical;border:1px solid #E4E9F0;border-radius:12px;padding:14px;font-family:Archivo,sans-serif;font-size:15px;line-height:1.55;color:#102A43;outline:none;background:#FAFCFE"></textarea>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+              <span style="font-size:12px;color:#7A8CA0">Comentários passam por moderação editorial.</span>
+              <button type="submit" style="background:#102A43;color:#fff;border:none;border-radius:10px;padding:12px 22px;font-family:Archivo,sans-serif;font-weight:600;font-size:14px;cursor:pointer" style-hover="background:#0A1E32">Publicar comentário</button>
+            </div>
+          </form>
+
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <sc-for list="{{ comments }}" as="c" hint-placeholder-count="3">
+              <div style="background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:42px 1fr;gap:14px">
+                <div style="width:42px;height:42px;border-radius:50%;background:#EEF2F7;color:#48607A;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px">{{ c.ini }}</div>
+                <div>
+                  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:6px">
+                    <span style="font-size:14px;font-weight:600">{{ c.nome }}</span>
+                    <span style="font-size:11px;color:#48607A;background:#EEF2F7;border-radius:6px;padding:3px 8px">{{ c.papel }}</span>
+                    <span style="font-size:12px;color:#7A8CA0">{{ c.quando }}</span>
+                  </div>
+                  <p style="margin:0 0 10px;font-size:14.5px;line-height:1.6;color:#20374E">{{ c.texto }}</p>
+                  <div style="display:flex;gap:16px;font-size:12.5px;color:#7A8CA0">
+                    <span style="cursor:pointer">Útil</span>
+                    <span style="cursor:pointer">Responder</span>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+      </div>
+
+      <aside style="display:{{ asideDisplay }};position:sticky;top:96px;flex-direction:column;gap:22px">
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:22px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <span style="width:24px;height:2px;background:#D4A72C;display:inline-block"></span>
+            <h3 style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:0">Mais lidas</h3>
+          </div>
+          <ol style="list-style:none;margin:0;padding:0">
+            <li style="display:grid;grid-template-columns:26px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #EEF2F7"><span style="font-family:'Source Serif 4',Georgia,serif;font-size:22px;font-weight:700;color:#D4A72C;line-height:1">1</span><a href="Materia.dc.html" style="font-size:14.5px;line-height:1.4;font-weight:500" style-hover="color:#00A86B">Síndico profissional: quanto custa e quando vale a pena</a></li>
+            <li style="display:grid;grid-template-columns:26px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #EEF2F7"><span style="font-family:'Source Serif 4',Georgia,serif;font-size:22px;font-weight:700;color:#C3CEDB;line-height:1">2</span><a href="Materia.dc.html" style="font-size:14.5px;line-height:1.4;font-weight:500" style-hover="color:#00A86B">Assembleia híbrida: o que a lei exige para o voto à distância</a></li>
+            <li style="display:grid;grid-template-columns:26px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #EEF2F7"><span style="font-family:'Source Serif 4',Georgia,serif;font-size:22px;font-weight:700;color:#C3CEDB;line-height:1">3</span><a href="Materia.dc.html" style="font-size:14.5px;line-height:1.4;font-weight:500" style-hover="color:#00A86B">Inadimplência cai a 8,4%, menor patamar desde 2019</a></li>
+            <li style="display:grid;grid-template-columns:26px 1fr;gap:12px;padding:12px 0"><span style="font-family:'Source Serif 4',Georgia,serif;font-size:22px;font-weight:700;color:#C3CEDB;line-height:1">4</span><a href="Materia.dc.html" style="font-size:14.5px;line-height:1.4;font-weight:500" style-hover="color:#00A86B">Energia solar em áreas comuns: payback médio de 4 anos</a></li>
+          </ol>
+        </div>
+
+        <div style="background:#102A43;border-radius:16px;padding:24px">
+          <span style="display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#D4A72C;margin-bottom:12px">Conteúdo especial</span>
+          <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:22px;line-height:1.2;color:#fff;margin:0 0 10px">Guia do Síndico 2026</h3>
+          <p style="margin:0 0 18px;font-size:14px;line-height:1.6;color:#B9C8D8">Checklists, modelos de ata e planilhas prontas para o seu mandato.</p>
+          <a href="Revista Digital.dc.html" style="display:inline-block;background:#D4A72C;color:#102A43;font-weight:700;font-size:13.5px;padding:11px 18px;border-radius:10px" style-hover="background:#E5BA45;color:#102A43">Acessar guia completo</a>
+        </div>
+
+        <div style="background:linear-gradient(135deg,#0B7A5A,#00A86B);border-radius:16px;padding:24px">
+          <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;line-height:1.25;color:#fff;margin:0 0 8px">Newsletter semanal</h3>
+          <p style="margin:0 0 16px;font-size:13.5px;line-height:1.6;color:#DAF3E9">As decisões e prazos que afetam a sua gestão, toda quinta.</p>
+          <a href="Revista Condominio.dc.html#newsletter" style="display:inline-block;background:#fff;color:#0B7A5A;font-weight:700;font-size:13.5px;padding:11px 18px;border-radius:10px" style-hover="background:#102A43;color:#fff">Quero receber</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <footer style="background:#102A43;color:#B9C8D8;padding:44px 20px 26px">
+    <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+      <div style="background:#fff;padding:10px 12px;border-radius:9px"><img src="uploads/revista.png" alt="Revista Condomínio" style="height:26px;width:auto;display:block" /></div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:13px">
+        <a href="Revista Condominio.dc.html" style="color:#B9C8D8" style-hover="color:#fff">Início</a>
+        <a href="Institucional.dc.html#expediente" style="color:#B9C8D8" style-hover="color:#fff">Expediente</a>
+        <a href="Institucional.dc.html#privacidade" style="color:#B9C8D8" style-hover="color:#fff">Política de Privacidade</a>
+        <a href="Anuncie.dc.html" style="color:#B9C8D8" style-hover="color:#fff">Anuncie</a>
+      </div>
+      <span style="font-size:12.5px;color:#7F97AF">© 2026 Revista Condomínio</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;bodySize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:17,&quot;min&quot;:15,&quot;max&quot;:21,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Leitura&quot;}}">
+class Component extends DCLogic {
+  state = {
+    w: typeof window !== 'undefined' ? window.innerWidth : 1280,
+    p: 0,
+    draft: '',
+    comments: [
+      { ini: 'CR', nome: 'Carlos Renato', papel: 'Síndico · SP', quando: 'há 1 hora', texto: 'Instalamos medição individualizada no ano passado e o consumo caiu 27%. O ponto difícil não foi a obra, foi convencer a assembleia com número na mão.' },
+      { ini: 'AL', nome: 'Ana Lúcia Freitas', papel: 'Administradora', quando: 'há 3 horas', texto: 'A parte de LGPD ainda é o maior gargalo. Poucos condomínios têm política de dados aprovada, e isso vira problema no primeiro incidente.' },
+      { ini: 'JM', nome: 'João Marcelo', papel: 'Conselheiro', quando: 'há 5 horas', texto: 'Concordo com o consultor citado: sem processo definido, o sistema só documenta melhor a bagunça. Começamos pela prestação de contas e foi o caminho certo.' }
+    ]
+  };
+  componentDidMount() {
+    this._r = () => this.setState({ w: window.innerWidth });
+    this._s = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      this.setState({ p: h > 0 ? Math.min(1, window.scrollY / h) : 0 });
+    };
+    window.addEventListener('resize', this._r);
+    window.addEventListener('scroll', this._s, { passive: true });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._r);
+    window.removeEventListener('scroll', this._s);
+  }
+  renderVals() {
+    const narrow = this.state.w < 1000;
+    const mobile = this.state.w < 860;
+    return {
+      navDisplay: mobile ? 'none' : 'flex',
+      mainCols: narrow ? '1fr' : 'minmax(0,1fr) 330px',
+      asideDisplay: narrow ? 'none' : 'flex',
+      progress: (this.state.p * 100).toFixed(1) + '%',
+      bodySize: (this.props.bodySize ?? 17) + 'px',
+      draft: this.state.draft,
+      onDraft: e => this.setState({ draft: e.target.value }),
+      comments: this.state.comments,
+      commentCount: this.state.comments.length,
+      onComment: e => {
+        e.preventDefault();
+        const t = this.state.draft.trim();
+        if (!t) return;
+        this.setState(s => ({
+          draft: '',
+          comments: [{ ini: 'VC', nome: 'Você', papel: 'Leitor', quando: 'agora', texto: t }].concat(s.comments)
+        }));
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

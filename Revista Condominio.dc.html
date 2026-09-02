@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin:0; background:#F5F7FA; -webkit-font-smoothing:antialiased; }
+  a { color:#102A43; text-decoration:none; }
+  a:hover { color:#00A86B; }
+  ::selection { background:#00A86B; color:#fff; }
+  @keyframes tickerScroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+</style>
+</helmet>
+<div style="font-family:Archivo,system-ui,sans-serif;color:#102A43;background:#F5F7FA;min-height:100vh">
+
+  <div style="background:#0B1F33;color:#9FB3C8;font-size:12px">
+    <div style="max-width:1280px;margin:0 auto;padding:0 20px;min-height:38px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+      <div style="display:flex;align-items:center;gap:16px">
+        <span style="display:flex;align-items:center;gap:6px;color:#E7EEF5"><span style="width:6px;height:6px;border-radius:50%;background:#00A86B;display:inline-block"></span>Recife, PE · {{ hoje }}</span>
+        <span style="color:#D4A72C">28°C · Parcialmente nublado</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <div style="display:flex;align-items:center;gap:6px">
+          <button onClick="{{ dec }}" aria-label="Diminuir texto" style="background:transparent;border:1px solid #26405A;color:#9FB3C8;border-radius:6px;width:24px;height:22px;cursor:pointer;font-family:Archivo,sans-serif;font-size:11px" style-hover="border-color:#00A86B;color:#fff">A-</button>
+          <button onClick="{{ inc }}" aria-label="Aumentar texto" style="background:transparent;border:1px solid #26405A;color:#9FB3C8;border-radius:6px;width:24px;height:22px;cursor:pointer;font-family:Archivo,sans-serif;font-size:11px" style-hover="border-color:#00A86B;color:#fff">A+</button>
+        </div>
+        <span style="width:1px;height:14px;background:#26405A;display:inline-block"></span>
+        <div style="display:flex;gap:12px">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" style="color:#9FB3C8" style-hover="color:#fff">Instagram</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" style="color:#9FB3C8" style-hover="color:#fff">LinkedIn</a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" style="color:#9FB3C8" style-hover="color:#fff">YouTube</a>
+          <a href="https://wa.me/558131262300" target="_blank" rel="noopener" style="color:#9FB3C8" style-hover="color:#fff">WhatsApp</a>
+        </div>
+        <span style="width:1px;height:14px;background:#26405A;display:inline-block"></span>
+        <a href="Anuncie.dc.html" style="color:#D4A72C;font-weight:600" style-hover="color:#E5BA45">Anuncie</a>
+        <a href="Institucional.dc.html#contato" style="color:#9FB3C8" style-hover="color:#fff">Entrar</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#fff;border-bottom:1px solid #E4E9F0;overflow:hidden">
+    <div style="max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:16px;height:40px">
+      <span style="flex:0 0 auto;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#C8102E;padding:5px 10px;border-radius:5px">Últimas</span>
+      <div style="flex:1;min-width:0;overflow:hidden;position:relative">
+        <div style="display:flex;gap:34px;white-space:nowrap;width:max-content;animation:tickerScroll 46s linear infinite;font-size:13px;color:#48607A">
+          <span>STJ define prazo para cobrança de cotas vencidas antes da arrematação</span>
+          <span>Bombeiros de PE publicam nova regra para carregadores de veículos elétricos</span>
+          <span>Inadimplência condominial recua para 8,4% no 2º trimestre</span>
+          <span>Justiça derruba multa aplicada sem previsão na convenção</span>
+          <span>Individualização de água passa a ser exigida em novos empreendimentos</span>
+          <span>STJ define prazo para cobrança de cotas vencidas antes da arrematação</span>
+          <span>Bombeiros de PE publicam nova regra para carregadores de veículos elétricos</span>
+          <span>Inadimplência condominial recua para 8,4% no 2º trimestre</span>
+          <span>Justiça derruba multa aplicada sem previsão na convenção</span>
+          <span>Individualização de água passa a ser exigida em novos empreendimentos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header style="position:sticky;top:0;z-index:70;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #E4E9F0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 20px;height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="#topo" style="display:flex;align-items:center"><img src="uploads/revista.png" alt="Revista Condomínio" style="height:38px;width:auto;display:block" /></a>
+
+      <nav onMouseLeave="{{ closeMenu }}" style="display:{{ navDisplay }};align-items:center;gap:20px;font-size:14px;font-weight:500;height:100%">
+        <a href="#topo" style="color:#102A43;padding:6px 0;border-bottom:2px solid #00A86B">Início</a>
+
+        <div onMouseEnter="{{ openNoticias }}" style="position:relative;height:100%;display:flex;align-items:center">
+          <span style="color:#48607A;cursor:pointer;padding:6px 0;display:flex;align-items:center;gap:5px" style-hover="color:#102A43">Notícias <span style="font-size:9px;color:#9FB3C8">▼</span></span>
+          <div style="display:{{ ddNoticias }};position:absolute;top:100%;left:-16px;background:#fff;border:1px solid #E4E9F0;border-radius:12px;box-shadow:0 18px 40px rgba(16,42,67,.14);padding:10px;min-width:230px;flex-direction:column">
+            <a href="#juridico" style="padding:9px 12px;border-radius:8px;font-size:13.5px;color:#102A43" style-hover="background:#F5F7FA">Jurídico e Legislação</a>
+            <a href="#engenharia" style="padding:9px 12px;border-radius:8px;font-size:13.5px;color:#102A43" style-hover="background:#F5F7FA">Engenharia e Manutenção</a>
+            <a href="#gestao" style="padding:9px 12px;border-radius:8px;font-size:13.5px;color:#102A43" style-hover="background:#F5F7FA">Gestão Condominial</a>
+            <a href="Noticias.dc.html#seguranca" style="padding:9px 12px;border-radius:8px;font-size:13.5px;color:#102A43" style-hover="background:#F5F7FA">Segurança</a>
+            <a href="Noticias.dc.html#sustentabilidade" style="padding:9px 12px;border-radius:8px;font-size:13.5px;color:#102A43" style-hover="background:#F5F7FA">Sustentabilidade</a>
+            <a href="#especial" style="padding:9px 12px;border-radius:8px;font-size:13.5px;color:#102A43" style-hover="background:#F5F7FA">Especial e Entrevistas</a>
+          </div>
+        </div>
+
+        <a href="#blog" style="color:#48607A;padding:6px 0" style-hover="color:#102A43">Blog / Colunistas</a>
+
+        <div onMouseEnter="{{ openGuia }}" style="position:relative;height:100%;display:flex;align-items:center">
+          <span style="color:#48607A;cursor:pointer;padding:6px 0;display:flex;align-items:center;gap:5px" style-hover="color:#102A43">Guia Comercial <span style="font-size:9px;color:#9FB3C8">▼</span></span>
+          <div style="display:{{ ddGuia }};position:absolute;top:100%;left:-16px;background:#fff;border:1px solid #E4E9F0;border-radius:12px;box-shadow:0 18px 40px rgba(16,42,67,.14);padding:10px;min-width:230px;flex-direction:column">
+            <a href="#fornecedores" style="padding:9px 12px;border-radius:8px;font-size:13.5px;color:#102A43" style-hover="background:#F5F7FA">Buscar fornecedores</a>
+            <a href="#fornecedores" style="padding:9px 12px;border-radius:8px;font-size:13.5px;color:#102A43" style-hover="background:#F5F7FA">Solicitar orçamentos</a>
+            <a href="Anuncie.dc.html" style="padding:9px 12px;border-radius:8px;font-size:13.5px;color:#102A43" style-hover="background:#F5F7FA">Planos do guia</a>
+          </div>
+        </div>
+
+        <a href="Revista Digital.dc.html" style="color:#48607A;padding:6px 0" style-hover="color:#102A43">Revista Digital</a>
+        <a href="#eventos" style="color:#48607A;padding:6px 0" style-hover="color:#102A43">Eventos</a>
+        <a href="Anuncie.dc.html" style="color:#48607A;padding:6px 0" style-hover="color:#102A43">Anuncie</a>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:10px">
+        <button onClick="{{ toggleSearch }}" aria-label="Buscar" style="width:38px;height:38px;border-radius:10px;border:1px solid #E4E9F0;background:#fff;color:#48607A;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px" style-hover="border-color:#00A86B;color:#00A86B">⌕</button>
+        <a href="#newsletter" style="background:#00A86B;color:#fff;font-size:13.5px;font-weight:600;padding:11px 18px;border-radius:10px;white-space:nowrap;box-shadow:0 2px 10px rgba(0,168,107,.28)" style-hover="background:#0B8F5E;color:#fff">Assine a revista</a>
+        <button onClick="{{ toggleMenu }}" aria-label="Menu" style="display:{{ burgerDisplay }};width:38px;height:38px;border-radius:10px;border:1px solid #E4E9F0;background:#fff;align-items:center;justify-content:center;cursor:pointer;flex-direction:column;gap:4px">
+          <span style="width:16px;height:2px;background:#102A43;border-radius:2px;display:block"></span>
+          <span style="width:16px;height:2px;background:#102A43;border-radius:2px;display:block"></span>
+          <span style="width:16px;height:2px;background:#102A43;border-radius:2px;display:block"></span>
+        </button>
+      </div>
+    </div>
+
+    <div style="display:{{ searchDisplay }};border-top:1px solid #E4E9F0;background:#fff;padding:18px 20px">
+      <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <input placeholder="Buscar por tema, título ou assunto…" style="flex:1 1 260px;min-width:0;border:1px solid #E4E9F0;background:#FAFCFE;border-radius:11px;padding:14px 16px;font-family:Archivo,sans-serif;font-size:15px;color:#102A43;outline:none" />
+        <button style="background:#102A43;color:#fff;border:none;border-radius:11px;padding:14px 24px;font-family:Archivo,sans-serif;font-weight:600;font-size:14px;cursor:pointer" style-hover="background:#0A1E32">Buscar</button>
+      </div>
+    </div>
+
+    <div style="display:{{ drawerDisplay }};border-top:1px solid #E4E9F0;background:#fff;padding:14px 20px 20px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+        <a href="#juridico" style="padding:11px 8px;font-size:14px;font-weight:500;border-radius:8px" style-hover="background:#F5F7FA">Jurídico</a>
+        <a href="#engenharia" style="padding:11px 8px;font-size:14px;font-weight:500;border-radius:8px" style-hover="background:#F5F7FA">Engenharia</a>
+        <a href="#gestao" style="padding:11px 8px;font-size:14px;font-weight:500;border-radius:8px" style-hover="background:#F5F7FA">Gestão</a>
+        <a href="Noticias.dc.html#seguranca" style="padding:11px 8px;font-size:14px;font-weight:500;border-radius:8px" style-hover="background:#F5F7FA">Segurança</a>
+        <a href="#blog" style="padding:11px 8px;font-size:14px;font-weight:500;border-radius:8px" style-hover="background:#F5F7FA">Blog / Colunistas</a>
+        <a href="#fornecedores" style="padding:11px 8px;font-size:14px;font-weight:500;border-radius:8px" style-hover="background:#F5F7FA">Guia Comercial</a>
+        <a href="Revista Digital.dc.html" style="padding:11px 8px;font-size:14px;font-weight:500;border-radius:8px" style-hover="background:#F5F7FA">Revista Digital</a>
+        <a href="#eventos" style="padding:11px 8px;font-size:14px;font-weight:500;border-radius:8px" style-hover="background:#F5F7FA">Eventos</a>
+        <a href="#classificados" style="padding:11px 8px;font-size:14px;font-weight:500;border-radius:8px" style-hover="background:#F5F7FA">Classificados</a>
+        <a href="Anuncie.dc.html" style="padding:11px 8px;font-size:14px;font-weight:500;border-radius:8px;color:#00A86B" style-hover="background:#F5F7FA">Anuncie</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo" style="max-width:1280px;margin:0 auto;padding:0 20px">
+
+    <div style="padding:24px 0 4px">
+      <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#9FB3C8;margin-bottom:6px">Publicidade</div>
+      <a href="Anuncie.dc.html" style="display:block;width:100%;max-width:970px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 2px 14px rgba(16,42,67,.12);transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-2px);box-shadow:0 14px 30px rgba(16,42,67,.18);color:#fff">
+        <div style="display:grid;grid-template-columns:190px minmax(0,1fr) auto;align-items:center;gap:clamp(12px,2.5vw,28px);height:90px;padding:0 clamp(14px,2.5vw,26px);background:linear-gradient(100deg,#0B1F33 0%,#102A43 46%,#16405E 100%)">
+          <div style="height:90px;background-size:cover;background-position:center;background-image:linear-gradient(90deg,rgba(11,31,51,0) 40%,#102A43 100%),url('https://images.pexels.com/photos/8221720/pexels-photo-8221720.jpeg?auto=compress&cs=tinysrgb&w=600')"></div>
+          <div style="min-width:0">
+            <span style="display:block;font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#D4A72C;margin-bottom:5px">Mídia kit 2026</span>
+            <strong style="display:block;font-family:'Source Serif 4',Georgia,serif;font-size:clamp(16px,2vw,23px);line-height:1.15;color:#fff;font-weight:700;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Sua marca diante de 78 mil síndicos por mês</strong>
+            <span style="display:block;font-size:12px;color:#9FB3C8;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Portal, newsletter e revista impressa — planos a partir de R$ 149/mês</span>
+          </div>
+          <span style="background:#D4A72C;color:#102A43;font-size:13px;font-weight:700;padding:11px 20px;border-radius:9px;white-space:nowrap">Anunciar agora</span>
+        </div>
+      </a>
+    </div>
+
+    <section id="noticias" style="display:grid;grid-template-columns:{{ heroCols }};gap:28px;padding:26px 0 8px;align-items:start">
+
+      <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
+        <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(16,42,67,.05);transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 36px rgba(16,42,67,.13);color:#102A43">
+          <div style="aspect-ratio:16/9;background-image:url('https://images.pexels.com/photos/8221720/pexels-photo-8221720.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:14px">
+            </div>
+          <div style="padding:26px 28px 30px">
+            <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0A6EBD;margin-bottom:12px">Tecnologia</span>
+            <h1 style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(27px,3vw,40px);line-height:1.1;margin:0 0 14px;letter-spacing:-.015em;text-wrap:balance">Condomínios inteligentes: tecnologia redefine a rotina de síndicos e moradores</h1>
+            <p style="margin:0 0 18px;font-size:16.5px;line-height:1.6;color:#48607A;max-width:62ch;text-wrap:pretty">Do reconhecimento facial na portaria à leitura remota de água, a automação já reduz custos em até 22% e muda a forma como assembleias, obras e serviços são acompanhados.</p>
+            <div style="display:flex;align-items:center;gap:12px;font-size:12.5px;color:#7A8CA0">
+              <span>Por Marina Alcântara</span><span style="width:3px;height:3px;border-radius:50%;background:#C3CEDB;display:inline-block"></span><span>há 2 horas</span>
+            </div>
+          </div>
+        </a>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px">
+          <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:14px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,42,67,.11);color:#102A43">
+            <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/5669619/pexels-photo-5669619.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center"></div>
+            <div style="padding:15px 17px 19px">
+              <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#4A3F8F;margin-bottom:7px">Jurídico</span>
+              <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.25;margin:0 0 8px;font-weight:700">STJ decide que multa por infração precisa de previsão expressa na convenção</h3>
+              <span style="font-size:12px;color:#7A8CA0">há 4 horas</span>
+            </div>
+          </a>
+          <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:14px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,42,67,.11);color:#102A43">
+            <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/13168513/pexels-photo-13168513.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center"></div>
+            <div style="padding:15px 17px 19px">
+              <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9A3324;margin-bottom:7px">Segurança</span>
+              <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.25;margin:0 0 8px;font-weight:700">Portarias remotas crescem 34% e reacendem debate sobre responsabilidade civil</h3>
+              <span style="font-size:12px;color:#7A8CA0">há 6 horas</span>
+            </div>
+          </a>
+          <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:14px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,42,67,.11);color:#102A43">
+            <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/7869122/pexels-photo-7869122.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center"></div>
+            <div style="padding:15px 17px 19px">
+              <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#00A86B;margin-bottom:7px">Finanças</span>
+              <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.25;margin:0 0 8px;font-weight:700">Fundo de reserva: quanto guardar em 2027 sem estourar a taxa condominial</h3>
+              <span style="font-size:12px;color:#7A8CA0">há 8 horas</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <aside style="display:flex;flex-direction:column;gap:20px;min-width:0">
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;overflow:hidden">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid #E4E9F0">
+            <button onClick="{{ tabUltimas }}" style="border:none;background:{{ tabBgA }};color:{{ tabFgA }};font-family:Archivo,sans-serif;font-size:12.5px;font-weight:600;padding:14px 6px;cursor:pointer">Últimas</button>
+            <button onClick="{{ tabLidas }}" style="border:none;background:{{ tabBgB }};color:{{ tabFgB }};font-family:Archivo,sans-serif;font-size:12.5px;font-weight:600;padding:14px 6px;cursor:pointer;border-left:1px solid #E4E9F0;border-right:1px solid #E4E9F0">Mais lidas</button>
+            <button onClick="{{ tabDestaques }}" style="border:none;background:{{ tabBgC }};color:{{ tabFgC }};font-family:Archivo,sans-serif;font-size:12.5px;font-weight:600;padding:14px 6px;cursor:pointer">Destaques</button>
+          </div>
+          <ol style="list-style:none;margin:0;padding:6px 20px 16px">
+            <sc-for list="{{ tabItems }}" as="it" hint-placeholder-count="5">
+              <li style="display:grid;grid-template-columns:28px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid #EEF2F7">
+                <span style="font-family:'Source Serif 4',Georgia,serif;font-size:22px;font-weight:700;color:#C3CEDB;line-height:1">{{ it.n }}</span>
+                <div>
+                  <span style="display:block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D4A72C;margin-bottom:5px">{{ it.tag }}</span>
+                  <a href="Materia.dc.html" style="font-size:14.5px;line-height:1.4;font-weight:500;color:#102A43" style-hover="color:#00A86B">{{ it.t }}</a>
+                </div>
+              </li>
+            </sc-for>
+          </ol>
+        </div>
+
+        <div>
+          <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#9FB3C8;margin-bottom:6px">Publicidade</div>
+          <a href="Anuncie.dc.html" style="display:flex;align-items:center;justify-content:center;height:250px;border:1px dashed #C7D3E0;border-radius:14px;background:#EDF2F7" style-hover="border-color:#00A86B;background:#E9F6F0">
+            <span style="font:500 11px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;color:#5B6B7F;text-align:center">banner retângulo<br />300×250</span>
+          </a>
+        </div>
+
+        <div style="background:#102A43;border-radius:16px;padding:22px">
+          <span style="display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#D4A72C;margin-bottom:10px">Enquete da semana</span>
+          <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.3;color:#fff;margin:0 0 16px">Você prefere síndico morador ou síndico profissional?</h3>
+          <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:14px">
+            <button onClick="{{ vote1 }}" style="text-align:left;background:#17364F;border:1px solid #2A4560;color:#E7EEF5;border-radius:10px;padding:12px 14px;font-family:Archivo,sans-serif;font-size:13.5px;cursor:pointer" style-hover="border-color:#00A86B">Síndico morador</button>
+            <button onClick="{{ vote2 }}" style="text-align:left;background:#17364F;border:1px solid #2A4560;color:#E7EEF5;border-radius:10px;padding:12px 14px;font-family:Archivo,sans-serif;font-size:13.5px;cursor:pointer" style-hover="border-color:#00A86B">Síndico profissional</button>
+            <button onClick="{{ vote3 }}" style="text-align:left;background:#17364F;border:1px solid #2A4560;color:#E7EEF5;border-radius:10px;padding:12px 14px;font-family:Archivo,sans-serif;font-size:13.5px;cursor:pointer" style-hover="border-color:#00A86B">Depende do porte do condomínio</button>
+          </div>
+          <span style="font-size:12px;color:#9FB3C8">{{ pollMsg }}</span>
+        </div>
+      </aside>
+    </section>
+
+    <section style="padding:22px 0 6px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a href="#juridico" style="font-size:13px;font-weight:600;color:#102A43;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:10px 18px" style-hover="border-color:#00A86B;color:#00A86B">Jurídico</a>
+        <a href="#engenharia" style="font-size:13px;font-weight:600;color:#102A43;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:10px 18px" style-hover="border-color:#00A86B;color:#00A86B">Engenharia</a>
+        <a href="#gestao" style="font-size:13px;font-weight:600;color:#102A43;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:10px 18px" style-hover="border-color:#00A86B;color:#00A86B">Gestão</a>
+        <a href="Noticias.dc.html#seguranca" style="font-size:13px;font-weight:600;color:#102A43;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:10px 18px" style-hover="border-color:#00A86B;color:#00A86B">Segurança</a>
+        <a href="Noticias.dc.html#sustentabilidade" style="font-size:13px;font-weight:600;color:#102A43;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:10px 18px" style-hover="border-color:#00A86B;color:#00A86B">Sustentabilidade</a>
+        <a href="#especial" style="font-size:13px;font-weight:600;color:#102A43;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:10px 18px" style-hover="border-color:#00A86B;color:#00A86B">Especial</a>
+        <a href="#classificados" style="font-size:13px;font-weight:600;color:#102A43;background:#fff;border:1px solid #E4E9F0;border-radius:999px;padding:10px 18px" style-hover="border-color:#00A86B;color:#00A86B">Classificados</a>
+      </div>
+    </section>
+
+    <section id="juridico" style="padding:34px 0 6px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-top:2px solid #4A3F8F;padding-top:14px;margin-bottom:20px">
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;font-weight:700;margin:0;letter-spacing:-.015em">Jurídico e Legislação</h2>
+        <a href="Noticias.dc.html#juridico" style="font-size:13px;font-weight:600;color:#4A3F8F">Ver tudo →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px">
+        <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:16px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+          <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:12px"></div>
+          <div style="padding:20px 22px 24px">
+            <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:21px;line-height:1.22;margin:0 0 10px;font-weight:700">Locação por temporada: o que a convenção precisa dizer para proibir</h3>
+            <p style="margin:0 0 12px;font-size:14.5px;line-height:1.55;color:#48607A">Decisões recentes exigem quórum qualificado e regra objetiva — proibição genérica tem sido derrubada.</p>
+            <span style="font-size:12px;color:#7A8CA0">01 set 2026</span>
+          </div>
+        </a>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <a href="Materia.dc.html" style="padding:15px 0;border-bottom:1px solid #E4E9F0;display:block" style-hover="color:#4A3F8F">
+            <h4 style="font-size:16px;line-height:1.35;margin:0 0 6px;font-weight:600">Justiça anula regra que restringia circulação de pets no elevador social</h4>
+            <span style="font-size:12px;color:#7A8CA0">Jurisprudência · 31 ago</span>
+          </a>
+          <a href="Materia.dc.html" style="padding:15px 0;border-bottom:1px solid #E4E9F0;display:block" style-hover="color:#4A3F8F">
+            <h4 style="font-size:16px;line-height:1.35;margin:0 0 6px;font-weight:600">Prestação de contas rejeitada: os efeitos práticos para o síndico</h4>
+            <span style="font-size:12px;color:#7A8CA0">Legislação · 30 ago</span>
+          </a>
+          <a href="Materia.dc.html" style="padding:15px 0;border-bottom:1px solid #E4E9F0;display:block" style-hover="color:#4A3F8F">
+            <h4 style="font-size:16px;line-height:1.35;margin:0 0 6px;font-weight:600">Morador antissocial: o caminho legal até a multa de dez vezes a taxa</h4>
+            <span style="font-size:12px;color:#7A8CA0">Mediação · 29 ago</span>
+          </a>
+          <a href="Materia.dc.html" style="padding:15px 0;display:block" style-hover="color:#4A3F8F">
+            <h4 style="font-size:16px;line-height:1.35;margin:0 0 6px;font-weight:600">Cobrança de inadimplentes: prazos e a nova rotina extrajudicial</h4>
+            <span style="font-size:12px;color:#7A8CA0">Contratos · 28 ago</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="engenharia" style="padding:34px 0 6px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-top:2px solid #B4620A;padding-top:14px;margin-bottom:20px">
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;font-weight:700;margin:0;letter-spacing:-.015em">Engenharia e Manutenção</h2>
+        <a href="Noticias.dc.html#engenharia" style="font-size:13px;font-weight:600;color:#B4620A">Ver tudo →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px">
+        <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:16px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+          <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/36153946/pexels-photo-36153946.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:12px"></div>
+          <div style="padding:18px 20px 22px">
+            <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B4620A;margin-bottom:8px">Elevadores</span>
+            <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.25;margin:0 0 8px;font-weight:700">Manutenção de elevador: o que o contrato precisa prever além da visita mensal</h3>
+            <span style="font-size:12px;color:#7A8CA0">31 ago 2026</span>
+          </div>
+        </a>
+        <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:16px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+          <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/32115287/pexels-photo-32115287.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:12px"></div>
+          <div style="padding:18px 20px 22px">
+            <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B4620A;margin-bottom:8px">Inspeção predial</span>
+            <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.25;margin:0 0 8px;font-weight:700">Laudo de inspeção predial passa a ser exigido em mais capitais</h3>
+            <span style="font-size:12px;color:#7A8CA0">30 ago 2026</span>
+          </div>
+        </a>
+        <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:16px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+          <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/22604447/pexels-photo-22604447.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:12px"></div>
+          <div style="padding:18px 20px 22px">
+            <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B4620A;margin-bottom:8px">Água e gás</span>
+            <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.25;margin:0 0 8px;font-weight:700">Individualização de água: passo a passo da obra à primeira leitura</h3>
+            <span style="font-size:12px;color:#7A8CA0">29 ago 2026</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div style="padding:32px 0 8px">
+      <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#9FB3C8;margin-bottom:6px">Publicidade</div>
+      <a href="Anuncie.dc.html" style="display:flex;align-items:center;justify-content:center;height:120px;border:1px dashed #C7D3E0;border-radius:14px;background:#EDF2F7" style-hover="border-color:#00A86B;background:#E9F6F0">
+        <span style="font:500 11px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;color:#5B6B7F;text-align:center">banner billboard · 970×120</span>
+      </a>
+    </div>
+
+    <section id="gestao" style="padding:26px 0 6px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-top:2px solid #102A43;padding-top:14px;margin-bottom:20px">
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;font-weight:700;margin:0;letter-spacing:-.015em">Gestão Condominial</h2>
+        <a href="Noticias.dc.html#gestao" style="font-size:13px;font-weight:600;color:#00A86B">Ver tudo →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px">
+        <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:16px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+          <div style="aspect-ratio:16/10;background-image:url('https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:12px"></div>
+          <div style="padding:20px 22px 24px">
+            <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:21px;line-height:1.22;margin:0 0 10px;font-weight:700">Prestação de contas digital vira exigência em administradoras de grande porte</h3>
+            <p style="margin:0 0 12px;font-size:14.5px;line-height:1.55;color:#48607A">Plataformas com trilha de auditoria reduzem impugnações e aceleram a aprovação em assembleia.</p>
+            <span style="font-size:12px;color:#7A8CA0">01 set 2026</span>
+          </div>
+        </a>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <a href="Materia.dc.html" style="padding:15px 0;border-bottom:1px solid #E4E9F0;display:block" style-hover="color:#00A86B">
+            <h4 style="font-size:16px;line-height:1.35;margin:0 0 6px;font-weight:600">Conselho fiscal atuante reduz em 40% os questionamentos de contas</h4>
+            <span style="font-size:12px;color:#7A8CA0">Conselho fiscal · 31 ago</span>
+          </a>
+          <a href="Materia.dc.html" style="padding:15px 0;border-bottom:1px solid #E4E9F0;display:block" style-hover="color:#00A86B">
+            <h4 style="font-size:16px;line-height:1.35;margin:0 0 6px;font-weight:600">Terceirização de zeladoria: erros de contrato que geram passivo trabalhista</h4>
+            <span style="font-size:12px;color:#7A8CA0">RH e terceirização · 30 ago</span>
+          </a>
+          <a href="Materia.dc.html" style="padding:15px 0;border-bottom:1px solid #E4E9F0;display:block" style-hover="color:#00A86B">
+            <h4 style="font-size:16px;line-height:1.35;margin:0 0 6px;font-weight:600">Condomínios ampliam espaços pet e revisam regras de convivência</h4>
+            <span style="font-size:12px;color:#7A8CA0">Convivência · 29 ago</span>
+          </a>
+          <a href="Materia.dc.html" style="padding:15px 0;display:block" style-hover="color:#00A86B">
+            <h4 style="font-size:16px;line-height:1.35;margin:0 0 6px;font-weight:600">Pesquisa: 6 em cada 10 síndicos dedicam mais de 20h semanais ao cargo</h4>
+            <span style="font-size:12px;color:#7A8CA0">Síndico profissional · 27 ago</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" style="padding:38px 0 6px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-top:2px solid #D4A72C;padding-top:14px;margin-bottom:8px">
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;font-weight:700;margin:0;letter-spacing:-.015em">Blog e Colunistas</h2>
+        <a href="Noticias.dc.html#especial" style="font-size:13px;font-weight:600;color:#B58E1E">Ver todos os colunistas →</a>
+      </div>
+      <p style="margin:0 0 20px;font-size:14.5px;color:#48607A;max-width:70ch">Análises assinadas por advogados, engenheiros, administradores e síndicos profissionais que acompanham o setor de perto.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px">
+        <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:22px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <div style="width:48px;height:48px;border-radius:50%;background-size:cover;background-position:center;background-image:url('https://images.pexels.com/photos/3831645/pexels-photo-3831645.jpeg?auto=compress&cs=tinysrgb&w=200');flex:0 0 auto"></div>
+            <div>
+              <div style="font-size:14.5px;font-weight:600">Rodrigo Karpat</div>
+              <div style="font-size:12px;color:#7A8CA0">Direito condominial</div>
+            </div>
+          </div>
+          <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.28;margin:0 0 10px;font-weight:700">Biometria facial em condomínios dentro dos limites da LGPD</h3>
+          <span style="font-size:12px;color:#7A8CA0">Coluna · 01 set 2026</span>
+        </a>
+        <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:22px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <div style="width:48px;height:48px;border-radius:50%;background-size:cover;background-position:center;background-image:url('https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200');flex:0 0 auto"></div>
+            <div>
+              <div style="font-size:14.5px;font-weight:600">Zélia Roriz</div>
+              <div style="font-size:12px;color:#7A8CA0">Mercado imobiliário</div>
+            </div>
+          </div>
+          <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.28;margin:0 0 10px;font-weight:700">O condomínio como produto: o que muda na entrega de novos empreendimentos</h3>
+          <span style="font-size:12px;color:#7A8CA0">Coluna · 31 ago 2026</span>
+        </a>
+        <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:22px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <div style="width:48px;height:48px;border-radius:50%;background-size:cover;background-position:center;background-image:url('https://images.pexels.com/photos/5792641/pexels-photo-5792641.jpeg?auto=compress&cs=tinysrgb&w=200');flex:0 0 auto"></div>
+            <div>
+              <div style="font-size:14.5px;font-weight:600">Inaldo Dantas</div>
+              <div style="font-size:12px;color:#7A8CA0">Assembleias e mandato</div>
+            </div>
+          </div>
+          <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.28;margin:0 0 10px;font-weight:700">Mandato vencido sem convocação de assembleia: entenda os riscos</h3>
+          <span style="font-size:12px;color:#7A8CA0">Coluna · 30 ago 2026</span>
+        </a>
+        <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:22px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <div style="width:48px;height:48px;border-radius:50%;background-size:cover;background-position:center;background-image:url('https://images.pexels.com/photos/1727280/pexels-photo-1727280.jpeg?auto=compress&cs=tinysrgb&w=200');flex:0 0 auto"></div>
+            <div>
+              <div style="font-size:14.5px;font-weight:600">Marcondes Bernardo</div>
+              <div style="font-size:12px;color:#7A8CA0">Indicadores e gestão</div>
+            </div>
+          </div>
+          <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.28;margin:0 0 10px;font-weight:700">O que pode ser medido pode ser melhorado: indicadores na gestão predial</h3>
+          <span style="font-size:12px;color:#7A8CA0">Coluna · 28 ago 2026</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="revista" style="margin:44px 0 12px;background:#102A43;border-radius:22px;padding:clamp(28px,4vw,48px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px;align-items:center">
+        <div>
+          <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#D4A72C;margin-bottom:14px">Revista online</span>
+          <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(27px,3.2vw,38px);line-height:1.12;color:#fff;margin:0 0 14px;letter-spacing:-.02em">Leia a edição de setembro no acervo digital</h2>
+          <p style="margin:0 0 24px;font-size:16px;line-height:1.65;color:#B9C8D8;max-width:50ch">Todas as edições da Revista Condomínio em leitor online, com busca por matéria, download em PDF e acervo desde 2019.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <a href="Revista Digital.dc.html" style="background:#00A86B;color:#fff;font-weight:700;font-size:14.5px;padding:14px 24px;border-radius:11px" style-hover="background:#0B8F5E;color:#fff">Ler edição de setembro</a>
+            <a href="Revista Digital.dc.html" style="border:1px solid #33506D;color:#E7EEF5;font-weight:600;font-size:14.5px;padding:14px 24px;border-radius:11px" style-hover="border-color:#00A86B;color:#fff">Ver acervo completo</a>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px">
+          <a href="Revista Digital.dc.html" style="display:block">
+            <div style="aspect-ratio:3/4;border-radius:12px;background-image:linear-gradient(rgba(16,42,67,.42),rgba(16,42,67,.42)),url('https://images.pexels.com/photos/8221720/pexels-photo-8221720.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;border:1px solid #2A4560;display:flex;align-items:flex-end;padding:12px"><span style="font:600 11px/1.3 Archivo,sans-serif;color:#D4A72C">Setembro 2026<br /><span style="color:#9FB3C8;font-weight:400">Edição 214</span></span></div>
+          </a>
+          <a href="Revista Digital.dc.html" style="display:block">
+            <div style="aspect-ratio:3/4;border-radius:12px;background-image:linear-gradient(rgba(16,42,67,.42),rgba(16,42,67,.42)),url('https://images.pexels.com/photos/13168513/pexels-photo-13168513.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;border:1px solid #2A4560;display:flex;align-items:flex-end;padding:12px;opacity:.75"><span style="font:600 11px/1.3 Archivo,sans-serif;color:#9FB3C8">Agosto 2026<br /><span style="font-weight:400">Edição 213</span></span></div>
+          </a>
+          <a href="Revista Digital.dc.html" style="display:block">
+            <div style="aspect-ratio:3/4;border-radius:12px;background-image:linear-gradient(rgba(16,42,67,.42),rgba(16,42,67,.42)),url('https://images.pexels.com/photos/32115287/pexels-photo-32115287.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;border:1px solid #2A4560;display:flex;align-items:flex-end;padding:12px;opacity:.55"><span style="font:600 11px/1.3 Archivo,sans-serif;color:#9FB3C8">Julho 2026<br /><span style="font-weight:400">Edição 212</span></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="fornecedores" style="padding:34px 0 6px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-top:2px solid #00A86B;padding-top:14px;margin-bottom:8px">
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;font-weight:700;margin:0;letter-spacing:-.015em">Guia Comercial</h2>
+        <a href="Anuncie.dc.html" style="font-size:13px;font-weight:600;color:#00A86B">Cadastrar minha empresa →</a>
+      </div>
+      <p style="margin:0 0 20px;font-size:14.5px;color:#48607A;max-width:70ch">Encontre fornecedores homologados por serviço e cidade — ou peça orçamento para várias empresas de uma vez.</p>
+
+      <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;align-items:end;margin-bottom:24px">
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#48607A">Serviço
+          <select style="border:1px solid #E4E9F0;background:#FAFCFE;border-radius:10px;padding:12px 13px;font-family:Archivo,sans-serif;font-size:14px;color:#102A43;outline:none">
+            <option>Administradora de condomínios</option>
+            <option>Manutenção de elevador</option>
+            <option>Portaria remota e CFTV</option>
+            <option>Individualização de água e gás</option>
+            <option>Impermeabilização e fachada</option>
+            <option>Síndico profissional</option>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#48607A">Estado
+          <select style="border:1px solid #E4E9F0;background:#FAFCFE;border-radius:10px;padding:12px 13px;font-family:Archivo,sans-serif;font-size:14px;color:#102A43;outline:none">
+            <option>Pernambuco</option>
+            <option>Paraíba</option>
+            <option>Rio Grande do Norte</option>
+            <option>São Paulo</option>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:600;color:#48607A">Cidade
+          <select style="border:1px solid #E4E9F0;background:#FAFCFE;border-radius:10px;padding:12px 13px;font-family:Archivo,sans-serif;font-size:14px;color:#102A43;outline:none">
+            <option>Recife</option>
+            <option>Olinda</option>
+            <option>Jaboatão dos Guararapes</option>
+            <option>Caruaru</option>
+          </select>
+        </label>
+        <button style="background:#102A43;color:#fff;border:none;border-radius:10px;padding:13px 20px;font-family:Archivo,sans-serif;font-weight:600;font-size:14px;cursor:pointer" style-hover="background:#0A1E32">Buscar fornecedores</button>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-bottom:22px">
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:20px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12)">
+          <div style="height:88px;border-radius:10px;background-size:cover;background-position:center;background-image:url('https://images.pexels.com/photos/13168513/pexels-photo-13168513.jpeg?auto=compress&cs=tinysrgb&w=600');margin-bottom:14px"></div>
+          <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#00A86B;margin-bottom:6px">Portaria remota</span>
+          <h4 style="font-size:16px;margin:0 0 6px;font-weight:600">Guardião Sistemas</h4>
+          <p style="margin:0 0 14px;font-size:13.5px;line-height:1.5;color:#48607A">Recife, PE · Atende Grande Recife</p>
+          <a href="Guia Comercial.dc.html#orcamento" style="display:inline-block;font-size:13px;font-weight:600;color:#00A86B">Pedir orçamento →</a>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:20px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12)">
+          <div style="height:88px;border-radius:10px;background-size:cover;background-position:center;background-image:url('https://images.pexels.com/photos/36153946/pexels-photo-36153946.jpeg?auto=compress&cs=tinysrgb&w=600');margin-bottom:14px"></div>
+          <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#00A86B;margin-bottom:6px">Medição individualizada</span>
+          <h4 style="font-size:16px;margin:0 0 6px;font-weight:600">Hidrolar Engenharia</h4>
+          <p style="margin:0 0 14px;font-size:13.5px;line-height:1.5;color:#48607A">Recife, PE · Atende PE, PB e RN</p>
+          <a href="Guia Comercial.dc.html#orcamento" style="display:inline-block;font-size:13px;font-weight:600;color:#00A86B">Pedir orçamento →</a>
+        </div>
+        <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:20px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12)">
+          <div style="height:88px;border-radius:10px;background-size:cover;background-position:center;background-image:url('https://images.pexels.com/photos/32115287/pexels-photo-32115287.jpeg?auto=compress&cs=tinysrgb&w=600');margin-bottom:14px"></div>
+          <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#00A86B;margin-bottom:6px">Fachada e impermeabilização</span>
+          <h4 style="font-size:16px;margin:0 0 6px;font-weight:600">Vertical Obras</h4>
+          <p style="margin:0 0 14px;font-size:13.5px;line-height:1.5;color:#48607A">Olinda, PE · Atende Nordeste</p>
+          <a href="Guia Comercial.dc.html#orcamento" style="display:inline-block;font-size:13px;font-weight:600;color:#00A86B">Pedir orçamento →</a>
+        </div>
+        <a href="Anuncie.dc.html" style="display:flex;flex-direction:column;justify-content:center;background:#E9F6F0;border:1px dashed #8CD2B6;border-radius:16px;padding:20px" style-hover="border-color:#00A86B;color:#102A43">
+          <span style="font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0B8F5E;margin-bottom:8px">Espaço disponível</span>
+          <h4 style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;margin:0 0 8px;font-weight:700">Sua empresa aqui</h4>
+          <p style="margin:0 0 12px;font-size:13.5px;line-height:1.5;color:#28624F">Planos a partir de R$ 149/mês, com WhatsApp direto e página exclusiva.</p>
+          <span style="font-size:13px;font-weight:700;color:#0B8F5E">Ver planos →</span>
+        </a>
+      </div>
+
+      <div style="background:#fff;border:1px solid #E4E9F0;border-radius:16px;padding:22px">
+        <h4 style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;color:#48607A">Categorias mais buscadas</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:9px">
+          <a href="Guia Comercial.dc.html" style="font-size:13px;color:#48607A;background:#F5F7FA;border-radius:999px;padding:9px 15px" style-hover="background:#E9F6F0;color:#0B8F5E">Administradora de condomínios</a>
+          <a href="Guia Comercial.dc.html" style="font-size:13px;color:#48607A;background:#F5F7FA;border-radius:999px;padding:9px 15px" style-hover="background:#E9F6F0;color:#0B8F5E">Manutenção de elevador</a>
+          <a href="Guia Comercial.dc.html" style="font-size:13px;color:#48607A;background:#F5F7FA;border-radius:999px;padding:9px 15px" style-hover="background:#E9F6F0;color:#0B8F5E">Portaria remota</a>
+          <a href="Guia Comercial.dc.html" style="font-size:13px;color:#48607A;background:#F5F7FA;border-radius:999px;padding:9px 15px" style-hover="background:#E9F6F0;color:#0B8F5E">Equipamentos CFTV</a>
+          <a href="Guia Comercial.dc.html" style="font-size:13px;color:#48607A;background:#F5F7FA;border-radius:999px;padding:9px 15px" style-hover="background:#E9F6F0;color:#0B8F5E">Extintores e combate a incêndio</a>
+          <a href="Guia Comercial.dc.html" style="font-size:13px;color:#48607A;background:#F5F7FA;border-radius:999px;padding:9px 15px" style-hover="background:#E9F6F0;color:#0B8F5E">Controle de pragas</a>
+          <a href="Guia Comercial.dc.html" style="font-size:13px;color:#48607A;background:#F5F7FA;border-radius:999px;padding:9px 15px" style-hover="background:#E9F6F0;color:#0B8F5E">Contabilidade condominial</a>
+          <a href="Guia Comercial.dc.html" style="font-size:13px;color:#48607A;background:#F5F7FA;border-radius:999px;padding:9px 15px" style-hover="background:#E9F6F0;color:#0B8F5E">Síndico profissional</a>
+          <a href="Guia Comercial.dc.html" style="font-size:13px;color:#48607A;background:#F5F7FA;border-radius:999px;padding:9px 15px" style-hover="background:#E9F6F0;color:#0B8F5E">Seguros para condomínio</a>
+          <a href="Guia Comercial.dc.html" style="font-size:13px;color:#48607A;background:#F5F7FA;border-radius:999px;padding:9px 15px" style-hover="background:#E9F6F0;color:#0B8F5E">Teste de estanqueidade de gás</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="eventos" style="padding:38px 0 6px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-top:2px solid #C8102E;padding-top:14px;margin-bottom:20px">
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;font-weight:700;margin:0;letter-spacing:-.015em">Eventos e Cursos</h2>
+        <a href="Noticias.dc.html#especial" style="font-size:13px;font-weight:600;color:#C8102E">Agenda completa →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+        <a href="Noticias.dc.html#especial" style="display:grid;grid-template-columns:64px 1fr;gap:16px;background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:18px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,42,67,.11);color:#102A43">
+          <div style="background:#102A43;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 0">
+            <span style="font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:700;color:#fff;line-height:1">12</span>
+            <span style="font-size:10.5px;letter-spacing:.12em;color:#D4A72C">SET</span>
+          </div>
+          <div>
+            <h4 style="font-size:16px;line-height:1.3;margin:0 0 7px;font-weight:600">Encontro de Síndicos do Nordeste — 2ª edição</h4>
+            <span style="font-size:12.5px;color:#7A8CA0">Centro de Eventos · Recife, PE</span>
+          </div>
+        </a>
+        <a href="Noticias.dc.html#especial" style="display:grid;grid-template-columns:64px 1fr;gap:16px;background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:18px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,42,67,.11);color:#102A43">
+          <div style="background:#102A43;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 0">
+            <span style="font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:700;color:#fff;line-height:1">25</span>
+            <span style="font-size:10.5px;letter-spacing:.12em;color:#D4A72C">SET</span>
+          </div>
+          <div>
+            <h4 style="font-size:16px;line-height:1.3;margin:0 0 7px;font-weight:600">Feira de Fornecedores para Condomínios</h4>
+            <span style="font-size:12.5px;color:#7A8CA0">Expo Center · Recife, PE</span>
+          </div>
+        </a>
+        <a href="Noticias.dc.html#especial" style="display:grid;grid-template-columns:64px 1fr;gap:16px;background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:18px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,42,67,.11);color:#102A43">
+          <div style="background:#102A43;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 0">
+            <span style="font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:700;color:#fff;line-height:1">02</span>
+            <span style="font-size:10.5px;letter-spacing:.12em;color:#D4A72C">OUT</span>
+          </div>
+          <div>
+            <h4 style="font-size:16px;line-height:1.3;margin:0 0 7px;font-weight:600">Congresso de Gestão Condominial</h4>
+            <span style="font-size:12.5px;color:#7A8CA0">Teatro RioMar · Recife, PE</span>
+          </div>
+        </a>
+        <a href="Noticias.dc.html#especial" style="display:grid;grid-template-columns:64px 1fr;gap:16px;background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:18px;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,42,67,.11);color:#102A43">
+          <div style="background:#102A43;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 0">
+            <span style="font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:700;color:#fff;line-height:1">06</span>
+            <span style="font-size:10.5px;letter-spacing:.12em;color:#D4A72C">NOV</span>
+          </div>
+          <div>
+            <h4 style="font-size:16px;line-height:1.3;margin:0 0 7px;font-weight:600">Curso: prestação de contas sem impugnação</h4>
+            <span style="font-size:12.5px;color:#7A8CA0">Online · 4 encontros</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="especial" style="padding:38px 0 6px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+        <div>
+          <div style="border-top:2px solid #0A6EBD;padding-top:14px;margin-bottom:18px">
+            <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:700;margin:0;letter-spacing:-.015em">TV Revista Condomínio</h2>
+          </div>
+          <a href="Materia.dc.html" style="display:block;background:#fff;border:1px solid #E4E9F0;border-radius:16px;overflow:hidden;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,42,67,.12);color:#102A43">
+            <div style="aspect-ratio:16/9;background-image:linear-gradient(rgba(16,42,67,.5),rgba(16,42,67,.5)),url('https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center">
+              <span style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;color:#102A43;font-size:18px">▶</span>
+            </div>
+            <div style="padding:18px 20px 22px">
+              <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#0A6EBD;margin-bottom:8px">Entrevista · 42 min</span>
+              <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.25;margin:0;font-weight:700">Como um síndico profissional assumiu 14 condomínios sem perder qualidade</h3>
+            </div>
+          </a>
+        </div>
+        <div>
+          <div style="border-top:2px solid #D4A72C;padding-top:14px;margin-bottom:18px">
+            <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:700;margin:0;letter-spacing:-.015em">Especial e Materiais</h2>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="#guia" style="display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:18px 20px" style-hover="border-color:#D4A72C;color:#102A43">
+              <div>
+                <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B58E1E;margin-bottom:6px">E-book</span>
+                <h4 style="font-size:16px;margin:0;font-weight:600">Checklist completo da assembleia ordinária</h4>
+              </div>
+              <span style="font-size:18px;color:#B58E1E">↓</span>
+            </a>
+            <a href="#guia" style="display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:18px 20px" style-hover="border-color:#D4A72C;color:#102A43">
+              <div>
+                <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B58E1E;margin-bottom:6px">Planilha</span>
+                <h4 style="font-size:16px;margin:0;font-weight:600">Previsão orçamentária 2027 (modelo editável)</h4>
+              </div>
+              <span style="font-size:18px;color:#B58E1E">↓</span>
+            </a>
+            <a href="#guia" style="display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:18px 20px" style-hover="border-color:#D4A72C;color:#102A43">
+              <div>
+                <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B58E1E;margin-bottom:6px">Entrevista</span>
+                <h4 style="font-size:16px;margin:0;font-weight:600">"O síndico virou gestor de contratos", diz especialista</h4>
+              </div>
+              <span style="font-size:18px;color:#B58E1E">→</span>
+            </a>
+            <a href="#classificados" style="display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:18px 20px" style-hover="border-color:#D4A72C;color:#102A43">
+              <div>
+                <span style="display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B58E1E;margin-bottom:6px">Você repórter</span>
+                <h4 style="font-size:16px;margin:0;font-weight:600">Envie uma pauta do seu condomínio para a redação</h4>
+              </div>
+              <span style="font-size:18px;color:#B58E1E">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="classificados" style="padding:38px 0 6px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-top:2px solid #0B7A5A;padding-top:14px;margin-bottom:20px">
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:26px;font-weight:700;margin:0;letter-spacing:-.015em">Classificados</h2>
+        <a href="Anuncie.dc.html" style="font-size:13px;font-weight:600;color:#0B7A5A">Anunciar grátis →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+        <a href="Guia Comercial.dc.html#classificados" style="background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:20px;display:block" style-hover="border-color:#00A86B;color:#102A43">
+          <h4 style="font-size:16px;margin:0 0 6px;font-weight:600">Empregos</h4>
+          <p style="margin:0;font-size:13.5px;color:#48607A;line-height:1.5">42 vagas abertas para zeladoria, portaria e administração</p>
+        </a>
+        <a href="Guia Comercial.dc.html#classificados" style="background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:20px;display:block" style-hover="border-color:#00A86B;color:#102A43">
+          <h4 style="font-size:16px;margin:0 0 6px;font-weight:600">Imóveis</h4>
+          <p style="margin:0;font-size:13.5px;color:#48607A;line-height:1.5">Venda e locação anunciadas por moradores e imobiliárias</p>
+        </a>
+        <a href="Guia Comercial.dc.html#classificados" style="background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:20px;display:block" style-hover="border-color:#00A86B;color:#102A43">
+          <h4 style="font-size:16px;margin:0 0 6px;font-weight:600">Aluguel por temporada</h4>
+          <p style="margin:0;font-size:13.5px;color:#48607A;line-height:1.5">Unidades liberadas pela convenção do condomínio</p>
+        </a>
+        <a href="Guia Comercial.dc.html#classificados" style="background:#fff;border:1px solid #E4E9F0;border-radius:14px;padding:20px;display:block" style-hover="border-color:#00A86B;color:#102A43">
+          <h4 style="font-size:16px;margin:0 0 6px;font-weight:600">Diversos</h4>
+          <p style="margin:0;font-size:13.5px;color:#48607A;line-height:1.5">Equipamentos, mobiliário e serviços entre moradores</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="guia" style="margin:44px 0 12px;background:#102A43;border-radius:22px;overflow:hidden">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center">
+        <div style="padding:clamp(30px,4vw,52px)">
+          <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#D4A72C;margin-bottom:16px">Conteúdo especial</span>
+          <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(28px,3.4vw,40px);line-height:1.1;color:#fff;margin:0 0 16px;letter-spacing:-.02em">Guia do Síndico 2026</h2>
+          <p style="margin:0 0 26px;font-size:16px;line-height:1.65;color:#B9C8D8;max-width:52ch">Checklists de manutenção, modelos de ata e convocação, planilha de previsão orçamentária e um passo a passo jurídico para a primeira assembleia do mandato.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px">
+            <span style="font-size:12.5px;color:#E7EEF5;border:1px solid #33506D;padding:7px 13px;border-radius:999px">12 checklists</span>
+            <span style="font-size:12.5px;color:#E7EEF5;border:1px solid #33506D;padding:7px 13px;border-radius:999px">9 modelos de documento</span>
+            <span style="font-size:12.5px;color:#E7EEF5;border:1px solid #33506D;padding:7px 13px;border-radius:999px">Planilhas editáveis</span>
+          </div>
+          <a href="Revista Digital.dc.html" style="display:inline-block;background:#D4A72C;color:#102A43;font-weight:700;font-size:14.5px;padding:14px 26px;border-radius:11px" style-hover="background:#E5BA45;color:#102A43">Acessar guia completo</a>
+        </div>
+        <div style="box-sizing:border-box;min-height:280px;height:100%;background-image:linear-gradient(rgba(16,42,67,.45),rgba(16,42,67,.45)),url('https://images.pexels.com/photos/20607063/pexels-photo-20607063.jpeg?auto=compress&cs=tinysrgb&w=1200');background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:16px">
+          </div>
+      </div>
+    </section>
+
+    <section id="newsletter" style="margin:0 0 56px;background:linear-gradient(135deg,#0B7A5A 0%,#00A86B 100%);border-radius:22px;padding:clamp(32px,4.5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;align-items:center">
+      <div>
+        <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(26px,3.2vw,36px);line-height:1.15;color:#fff;margin:0 0 12px;letter-spacing:-.02em">Receba as principais notícias do universo condominial</h2>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#DAF3E9;max-width:48ch">Uma edição por semana, com as decisões, prazos e tendências que afetam a sua gestão.</p>
+      </div>
+      <form onSubmit="{{ onSubscribe }}" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <input type="email" required="required" placeholder="seu@email.com.br" value="{{ email }}" onChange="{{ onEmail }}" style="flex:1 1 220px;min-width:0;border:none;border-radius:12px;padding:16px 18px;font-family:Archivo,sans-serif;font-size:15px;color:#102A43;outline:none;box-shadow:0 2px 14px rgba(10,60,40,.16)" />
+          <button type="submit" style="background:#102A43;color:#fff;border:none;border-radius:12px;padding:16px 26px;font-family:Archivo,sans-serif;font-weight:700;font-size:15px;cursor:pointer;white-space:nowrap" style-hover="background:#0A1E32">Quero receber</button>
+        </div>
+        <span style="font-size:12.5px;color:#DAF3E9">{{ subMsg }}</span>
+      </form>
+    </section>
+
+  </main>
+
+  <footer style="background:#102A43;color:#B9C8D8;padding:56px 20px 28px">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:36px;padding-bottom:40px;border-bottom:1px solid #23405C">
+        <div>
+          <div style="background:#fff;display:inline-block;padding:12px 14px;border-radius:10px;margin-bottom:18px"><img src="uploads/revista.png" alt="Revista Condomínio" style="height:30px;width:auto;display:block" /></div>
+          <p style="margin:0 0 16px;font-size:14px;line-height:1.65;max-width:34ch">Jornalismo especializado no mercado condominial brasileiro — gestão, legislação, engenharia, segurança e convivência.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" style="color:#B9C8D8;border:1px solid #23405C;border-radius:8px;padding:7px 12px;font-size:12.5px" style-hover="color:#fff;border-color:#00A86B">Instagram</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" style="color:#B9C8D8;border:1px solid #23405C;border-radius:8px;padding:7px 12px;font-size:12.5px" style-hover="color:#fff;border-color:#00A86B">LinkedIn</a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" style="color:#B9C8D8;border:1px solid #23405C;border-radius:8px;padding:7px 12px;font-size:12.5px" style-hover="color:#fff;border-color:#00A86B">YouTube</a>
+            <a href="https://wa.me/558131262300" target="_blank" rel="noopener" style="color:#B9C8D8;border:1px solid #23405C;border-radius:8px;padding:7px 12px;font-size:12.5px" style-hover="color:#fff;border-color:#00A86B">WhatsApp</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 16px">Notícias</h4>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:14px">
+            <a href="#juridico" style="color:#B9C8D8" style-hover="color:#00A86B">Jurídico e Legislação</a>
+            <a href="#engenharia" style="color:#B9C8D8" style-hover="color:#00A86B">Engenharia e Manutenção</a>
+            <a href="#gestao" style="color:#B9C8D8" style-hover="color:#00A86B">Gestão Condominial</a>
+            <a href="#especial" style="color:#B9C8D8" style-hover="color:#00A86B">Especial e Entrevistas</a>
+            <a href="#blog" style="color:#B9C8D8" style-hover="color:#00A86B">Blog e Colunistas</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 16px">Guia Comercial</h4>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:14px">
+            <a href="#fornecedores" style="color:#B9C8D8" style-hover="color:#00A86B">Buscar por serviço e cidade</a>
+            <a href="#fornecedores" style="color:#B9C8D8" style-hover="color:#00A86B">Solicitar orçamentos</a>
+            <a href="Anuncie.dc.html" style="color:#B9C8D8" style-hover="color:#00A86B">Planos do guia</a>
+            <a href="Anuncie.dc.html" style="color:#B9C8D8" style-hover="color:#00A86B">Classificados</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 16px">Anuncie</h4>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:14px">
+            <a href="Anuncie.dc.html" style="color:#B9C8D8" style-hover="color:#00A86B">Banners e mídia display</a>
+            <a href="Anuncie.dc.html" style="color:#B9C8D8" style-hover="color:#00A86B">Conteúdo patrocinado</a>
+            <a href="Anuncie.dc.html" style="color:#B9C8D8" style-hover="color:#00A86B">Anúncio na revista impressa</a>
+            <a href="Anuncie.dc.html" style="color:#B9C8D8" style-hover="color:#00A86B">Mídia kit 2026</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 16px">Newsletter</h4>
+          <p style="margin:0 0 14px;font-size:14px;line-height:1.6">Resumo semanal, toda quinta-feira.</p>
+          <a href="#newsletter" style="display:inline-block;background:#00A86B;color:#fff;font-weight:600;font-size:13.5px;padding:12px 20px;border-radius:10px;margin-bottom:16px" style-hover="background:#0B8F5E;color:#fff">Assinar gratuitamente</a>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:13.5px">
+            <span>redacao@revistacondominio.com.br</span>
+            <span>+55 81 3126-2300</span>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:22px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:12.5px;color:#7F97AF">
+        <span>© 2026 Revista Condomínio. Todos os direitos reservados.</span>
+        <div style="display:flex;flex-wrap:wrap;gap:20px">
+          <a href="Institucional.dc.html#quem-somos" style="color:#7F97AF" style-hover="color:#fff">Quem somos</a>
+          <a href="Institucional.dc.html#privacidade" style="color:#7F97AF" style-hover="color:#fff">Política de Privacidade</a>
+          <a href="Institucional.dc.html#termos" style="color:#7F97AF" style-hover="color:#fff">Termos de Uso</a>
+          <a href="Institucional.dc.html#expediente" style="color:#7F97AF" style-hover="color:#fff">Expediente</a>
+          <a href="Anuncie.dc.html" style="color:#7F97AF" style-hover="color:#fff">Anuncie</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = {
+    w: typeof window !== 'undefined' ? window.innerWidth : 1280,
+    menu: false, search: false, dd: null, tab: 'ultimas',
+    email: '', sent: false, voted: null, zoom: 1
+  };
+  componentDidMount() {
+    this._r = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this._r);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._r); }
+  renderVals() {
+    const mobile = this.state.w < 1180;
+    const d = new Date();
+    const data = {
+      ultimas: [
+        { n: 1, tag: 'Jurídico', t: 'STJ define prazo para cobrança de cotas vencidas antes da arrematação' },
+        { n: 2, tag: 'Engenharia', t: 'Nova regra do Corpo de Bombeiros muda projeto de carregadores elétricos' },
+        { n: 3, tag: 'Gestão', t: 'Inadimplência condominial recua para 8,4% no segundo trimestre' },
+        { n: 4, tag: 'Segurança', t: 'Golpe do falso prestador volta a circular em condomínios do Recife' },
+        { n: 5, tag: 'Sustentabilidade', t: 'Prêmio estadual vai reconhecer condomínios com práticas ESG' }
+      ],
+      lidas: [
+        { n: 1, tag: 'Gestão', t: 'Síndico profissional: quanto custa e quando vale a pena contratar' },
+        { n: 2, tag: 'Jurídico', t: 'Assembleia híbrida: o que a lei exige para o voto à distância ser válido' },
+        { n: 3, tag: 'Engenharia', t: 'Reforma em unidade: os 7 documentos que o síndico deve exigir' },
+        { n: 4, tag: 'Finanças', t: 'Onde aplicar o fundo de reserva com segurança e liquidez' },
+        { n: 5, tag: 'Tecnologia', t: 'Energia solar em áreas comuns: payback médio já é de 4 anos' }
+      ],
+      destaques: [
+        { n: 1, tag: 'Especial', t: 'Guia do Síndico 2026: checklists, modelos e planilhas' },
+        { n: 2, tag: 'Entrevista', t: '"O síndico virou gestor de contratos", diz especialista' },
+        { n: 3, tag: 'Série', t: 'Condomínios inteligentes: os quatro sistemas que mais economizam' },
+        { n: 4, tag: 'Evento', t: 'Congresso de Gestão Condominial abre inscrições' },
+        { n: 5, tag: 'E-book', t: 'Checklist completo da assembleia ordinária' }
+      ]
+    };
+    const on = '#fff', off = '#F5F7FA', onFg = '#102A43', offFg = '#7A8CA0';
+    const t = this.state.tab;
+    return {
+      navDisplay: mobile ? 'none' : 'flex',
+      burgerDisplay: mobile ? 'flex' : 'none',
+      drawerDisplay: mobile && this.state.menu ? 'block' : 'none',
+      searchDisplay: this.state.search ? 'block' : 'none',
+      heroCols: this.state.w < 1000 ? '1fr' : 'minmax(0,1fr) 340px',
+      toggleMenu: () => this.setState(s => ({ menu: !s.menu })),
+      toggleSearch: () => this.setState(s => ({ search: !s.search })),
+      openNoticias: () => this.setState({ dd: 'noticias' }),
+      openGuia: () => this.setState({ dd: 'guia' }),
+      closeMenu: () => this.setState({ dd: null }),
+      ddNoticias: this.state.dd === 'noticias' ? 'flex' : 'none',
+      ddGuia: this.state.dd === 'guia' ? 'flex' : 'none',
+      hoje: (s => s.charAt(0).toUpperCase() + s.slice(1))(d.toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' })),
+      inc: () => { const z = Math.min(1.25, this.state.zoom + 0.05); this.setState({ zoom: z }); document.documentElement.style.fontSize = (16 * z) + 'px'; },
+      dec: () => { const z = Math.max(0.85, this.state.zoom - 0.05); this.setState({ zoom: z }); document.documentElement.style.fontSize = (16 * z) + 'px'; },
+      tabUltimas: () => this.setState({ tab: 'ultimas' }),
+      tabLidas: () => this.setState({ tab: 'lidas' }),
+      tabDestaques: () => this.setState({ tab: 'destaques' }),
+      tabItems: data[t],
+      tabBgA: t === 'ultimas' ? on : off, tabFgA: t === 'ultimas' ? onFg : offFg,
+      tabBgB: t === 'lidas' ? on : off, tabFgB: t === 'lidas' ? onFg : offFg,
+      tabBgC: t === 'destaques' ? on : off, tabFgC: t === 'destaques' ? onFg : offFg,
+      vote1: () => this.setState({ voted: 'Síndico morador' }),
+      vote2: () => this.setState({ voted: 'Síndico profissional' }),
+      vote3: () => this.setState({ voted: 'Depende do porte' }),
+      pollMsg: this.state.voted ? 'Voto registrado: ' + this.state.voted + ' · 1.284 participações' : '1.283 participações nesta semana',
+      email: this.state.email,
+      onEmail: e => this.setState({ email: e.target.value }),
+      onSubscribe: e => { e.preventDefault(); this.setState({ sent: true }); },
+      subMsg: this.state.sent ? 'Pronto! Confirme a inscrição no e-mail que acabamos de enviar.' : 'Sem spam. Cancele quando quiser.'
+    };
+  }
+}
+</script>
+</body>
+</html>
